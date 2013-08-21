@@ -1,0 +1,6 @@
+[submodule "library/aosl-cpp"]
+	path = library/aosl-cpp
+	url = git@github.com:joonhwan/aosl-cpp.git
+[submodule "library/utilcpp"]
+	path = library/utilcpp
+	url = git@github.com:joonhwan/utilcpp.git
