@@ -1,0 +1,26 @@
+#pragma once
+
+// min/max macro compiler error hack
+#define NOMINMAX
+#include <algorithm>
+namespace Gdiplus
+{
+using std::min;
+using std::max;
+};
+
+// http://www.softwareverify.com/blog/?p=671
+#include <math.h>
+#pragma warning (push)
+#pragma warning (disable: 4985) // disable the warning message during the include
+#include <intrin.h>             // this is where I would normally get the warning message
+#pragma warning (pop)
+
+#ifdef _MSC_VER // This check can be removed if you only build for Windows
+#pragma warning (push)
+#pragma warning (disable : 4005)
+#include <intsafe.h>
+#include <stdint.h>
+#pragma warning (push)
+#pragma warning (default : 4005)
+#endif
